@@ -2,4 +2,7 @@
     <li *ngFor="#todo of todos">
         <span class="badge">{{todo.id}}</span> {{todo.content}}
     </li>
+    <li *ngIf="newTodo"><span class="badge">{{newTodo.id}}</span> {{newTodo.content}}</li>
 </ul>
+<input [(ngModel)]="newTodo.content" placeholder="todo">
+<button (click)="addTodo(newTodo)">Add</button>
